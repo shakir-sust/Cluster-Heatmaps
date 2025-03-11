@@ -3,7 +3,7 @@
 #library(tidyverse)
 #melon_voc <- read_csv("./data/melon_cluster_heatmap_trial.csv")
 
-melon_voc <- read.csv("./data/melon_cluster_heatmap_trial.csv", header = TRUE, row.names = 1)
+melon_voc <- read.csv("./data/melon_new.csv", header = TRUE, row.names = 1)
 
 #read.csv(): This is a built-in R function used to import data from a CSV (comma-separated values) file into a data frame.
 #"./data/melon_cluster_heatmap_trial.csv": This is the file path to the CSV file.
@@ -28,7 +28,7 @@ library(pheatmap)
 #?pheatmap #to get help of pheatmap library and function
 
 pheatmap(melon_voc,
-         cluster_rows = T, 
+         cluster_rows = F, 
          cluster_cols = T,
          clustering_distance_rows = 'euclidean',
          clustering_distance_cols = 'euclidean',
@@ -44,10 +44,10 @@ pheatmap(melon_voc,
          #legend = F, #to remove legends
          #legend_breaks = c(0, 250, 500, 750, 1000), #which numbers to display on the legend,
          cutree_rows = 3, #to cut row clusters into 3
-         cutree_cols = 3, #to cut column clusters into 3
-         fontsize_col = 10, #to adjust the font size of column names as mentioned in the .csv file
-         fontsize_row = 10, #to adjust the font size of row names as mentioned in the .csv file
-         angle_col = 45, #to show column name at 45 degrees angle
+         cutree_cols = 4, #to cut column clusters into 3
+         fontsize_col = 8, #to adjust the font size of column names as mentioned in the .csv file
+         fontsize_row = 8, #to adjust the font size of row names as mentioned in the .csv file
+         angle_col = 90, #to show column name at 45 degrees angle
          na_col = 'black' #to show cells with missing values as black color
          )
 
