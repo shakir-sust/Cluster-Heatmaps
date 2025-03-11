@@ -5,6 +5,19 @@
 
 melon_voc <- read.csv("./data/melon_cluster_heatmap_trial.csv", header = TRUE, row.names = 1)
 
+#read.csv(): This is a built-in R function used to import data from a CSV (comma-separated values) file into a data frame.
+#"./data/melon_cluster_heatmap_trial.csv": This is the file path to the CSV file.
+#"./data/" indicates that the file is located in a folder named data relative to your current working directory.
+#"melon_cluster_heatmap_trial.csv" is the name of the CSV file you want to read.
+
+#"header = TRUE:" This argument tells R that the first row of the CSV file contains column names (i.e., the headers).
+#If set to FALSE, R would treat the first row as data, not as column names.
+#"row.names = 1:" This argument specifies that the first column in the CSV file should be used as row names for the data frame.
+#Instead of treating the first column as data, its values will serve as identifiers for each row.
+#In summary, the code reads a CSV file from the specified path, uses the first row as column headers, 
+#and assigns the values in the first column as row names, storing the resulting data frame in the variable melon_voc.
+
+
 View(melon_voc)
 
 head(melon_voc)
